@@ -115,13 +115,13 @@ describe('Adal', function () {
     it('gets specific resource for defined endpoint mapping', function () {
         adal.config.endpoints = { 'a': 'resource for a' };
         expect(adal.getResourceForEndpoint('a')).toBe('resource for a');
-        expect(adal.getResourceForEndpoint('b')).toBe(adal.config.loginResource);
+        expect(adal.getResourceForEndpoint('b')).toBe(null); //adal.config.loginResource);
     });
 
     it('gets default resource for empty endpoint mapping', function () {
         adal.config.endpoints = null;
-        expect(adal.getResourceForEndpoint('a')).toBe('default resource');
-        expect(adal.getResourceForEndpoint('b')).toBe('default resource');
+        expect(adal.getResourceForEndpoint('a')).toBe(null); //'default resource');
+        expect(adal.getResourceForEndpoint('b')).toBe(null); //'default resource');
     });
 
     it('sets default resource', function () {
@@ -612,7 +612,7 @@ describe('Adal', function () {
         expect(adal.getResourceForEndpoint('https://host.com/a/b')).toBe(null); //adal.config.loginResource);
         expect(adal.getResourceForEndpoint('https://host.com/page/')).toBe(null); //adal.config.loginResource);
         expect(adal.getResourceForEndpoint('https://notapp.com/page/')).toBe(null);
-        expect(adal.getResourceForEndpoint('/api/todo')).toBe(null): //adal.config.loginResource);
+        expect(adal.getResourceForEndpoint('/api/todo')).toBe(null); //adal.config.loginResource);
     });
 
     it ('test host extraction', function () {
