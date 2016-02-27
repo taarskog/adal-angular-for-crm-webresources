@@ -1,6 +1,13 @@
 Active Directory Authentication Library (ADAL) for JavaScript
 ====================================
-[![Build Status](https://travis-ci.org/AzureAD/azure-activedirectory-library-for-js.svg?branch=master)](https://travis-ci.org/AzureAD/azure-activedirectory-library-for-js)
+[![Build Status](https://travis-ci.org/taarskog/adal-angular-for-crm-webresources.svg?branch=master)](https://travis-ci.org/taarskog/adal-angular-for-crm-webresources)
+
+## Fork information
+This is a fork of [azure-activedirectory-library-for-js](https://github.com/AzureAD/azure-activedirectory-library-for-js) with just one minor modification to enable
+the lib to be used in Dynamics CRM web resources. In this situation the lib should not handle tokens against CRM - only towards external resources such as Power BI.
+
+
+------
 
 Active Directory Authentication Library for JavaScript (ADAL JS) helps you to use Azure AD for handling authentication in your single page applications.
 This library is optimized for working together with AngularJS.
