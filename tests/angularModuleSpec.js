@@ -111,17 +111,17 @@ describe('TaskCtl', function () {
         $httpBackend.flush();
     });
 
-    it ('send tokens for app backend call not in endpoints list', function () {
+    it ('does not send tokens for app backend call not in endpoints list', function () {
         $httpBackend.expectGET('/someapi/item', function (headers) {
-            return headers.Authorization === 'Bearer Token456'
+            return headers.hasOwnProperty('Authorization') === false
         }).respond(200);
         scope.taskCall4();
         $httpBackend.flush();
     });
 
-    it('send tokens for app backend call', function () {
+    it('does not send tokens for app backend call', function () {
         $httpBackend.expectGET('https://myapp.com/someapi/item', function (headers) {
-            return headers.Authorization === 'Bearer Token456'
+            return headers.hasOwnProperty('Authorization') === false
         }).respond(200);
         scope.taskCall5();
         $httpBackend.flush();

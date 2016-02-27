@@ -1,11 +1,12 @@
 {
   "name": "adal-angular",
   "version": "1.0.8",
-  "homepage": "https://github.com/AzureAD/azure-activedirectory-library-for-js",
+  "homepage": "https://github.com/taarskog/adal-angular-for-crm-webresources",
   "authors": [
-    "MSOpentech"
+    "MSOpentech",
+	"taarskog"
   ],
-  "description": "Azure Active Directory Client Library for js",
+  "description": "Azure Active Directory Client Library for js modified for Dynamics CRM web resources",
   "main": ["./lib/adal.js",
 	"./lib/adal-angular.js"
   ],
@@ -17,7 +18,11 @@
     "oauth",
     "active",
     "directory",
-    "azure"
+    "azure",
+	"xrm",
+	"crm",
+	"dynamics crm",
+	"crm online"
   ],
    "licenses": [
     {

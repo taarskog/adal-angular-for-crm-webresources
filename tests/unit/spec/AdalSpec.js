@@ -606,13 +606,13 @@ describe('Adal', function () {
         }
     });
 
-    it ('test get resource for endpoint from app backend', function () {
+    it ('test get resource for endpoint from app backend gives null', function () {
         adal.config.redirectUri = 'https://host.com/page';
-        expect(adal.getResourceForEndpoint('https://host.com')).toBe(adal.config.loginResource);
-        expect(adal.getResourceForEndpoint('https://host.com/a/b')).toBe(adal.config.loginResource);
-        expect(adal.getResourceForEndpoint('https://host.com/page/')).toBe(adal.config.loginResource);
+        expect(adal.getResourceForEndpoint('https://host.com')).toBe(null); //adal.config.loginResource);
+        expect(adal.getResourceForEndpoint('https://host.com/a/b')).toBe(null); //adal.config.loginResource);
+        expect(adal.getResourceForEndpoint('https://host.com/page/')).toBe(null); //adal.config.loginResource);
         expect(adal.getResourceForEndpoint('https://notapp.com/page/')).toBe(null);
-        expect(adal.getResourceForEndpoint('/api/todo')).toBe(adal.config.loginResource);
+        expect(adal.getResourceForEndpoint('/api/todo')).toBe(null): //adal.config.loginResource);
     });
 
     it ('test host extraction', function () {
